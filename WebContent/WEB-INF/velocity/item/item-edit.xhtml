@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>Item</title>
+    </head>
+    <body>
+        <!-- Level 0 Template Start -->
+        <form id="item" action="#surl("value=/item/$!model.id")" method="post">
+        	<input type="hidden" name="_method" value="PUT" />
+            <table bgcolor="#000000" border="0" cellpadding="3" cellspacing="1" align="center">
+                <tr bgcolor="#d0dcff">
+                    <td colspan="2">
+                        <strong>Item Edit</strong>
+                    </td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Code</td>
+                    <td>
+                    	##stextfield("maxlength=20" "name=code")
+                    	<input type="text" name="code" value="$!model.code" id="code" maxlength="20" tabindex="1"/>
+                      	##springBind("item.code")
+                      	##<font color="red" >#springShowErrors("<br/>" "")</font>
+                    </td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Name</td>
+                    <td>
+                    	<input type="text" name="name" value="$!model.name" id="name" tabindex="2" maxlength="20"/>
+                    	##springBind("item.name")
+                      	##<font color="red" >#springShowErrors("<br/>" "")</font>
+                    </td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Price</td>
+                    <td>
+                    	<input type="text" name="price" value="$!model.price" id="price" tabindex="2" maxlength="20"/>
+                      	##springBind("item.price")
+                      	##<font color="red" >#springShowErrors("<br/>" "")</font>
+                    </td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Description</td>
+                    <td><textarea name="description" id="description" tabindex="3"class="text" maxlength="100">$!model.description</textarea></td>
+                </tr>
+                <tr bgcolor="#ffffff" >
+                    <td colspan="2">
+                        ##<input type="hidden" name="item.id" value="$!model.id"/>
+                        <input type="submit" tabindex="20"/>
+                        <input type="reset" tabindex="21"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

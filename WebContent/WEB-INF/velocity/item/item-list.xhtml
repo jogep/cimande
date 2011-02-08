@@ -1,0 +1,42 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <title>View Item Data</title>
+    </head>
+    <body>
+        <table bgcolor="#000000" border="0" cellpadding="3"
+        cellspacing="1" width="98%">
+    <tr bgcolor="#d0dcff">
+        <td colspan="5">
+            <strong>Item</strong>
+        </td>
+    </tr>
+    <tr bgcolor="#e4e4e4">
+        <td>Code</td>
+        <td>Name</td>
+        <td>Price</td>
+        <td>Description</td>
+        <td>Action</td>
+    </tr>
+    #foreach($i in $model)
+    <tr bgcolor="#ffffff">
+        <td>$!i.code</td>
+        <td>$!i.name</td>
+        <td>$!i.price</td>
+        <td>$!i.description</td>
+        <td>
+            <a href="#surl("value=/item/$!i.id/edit")">Edit
+                ##<img src="../images/silk/application_edit.png" title="Edit" border="0"/>
+                </a>&nbsp;&nbsp;&nbsp;
+            <a href="#surl("value=/item/$!i.id/delete")">Delete
+                ##<img src="../images/silk/delete.png" title="Delete" border="0"/>
+                </a>
+        </td>
+    </tr>
+    #end
+        </table>
+    </body>
+</html>

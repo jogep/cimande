@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+        <title>Item</title>
+        <link rel="stylesheet" type="text/css" href="css/jquery/jquery-ui.custom.css" />
+        <link rel="stylesheet" type="text/css" href="css/jquery/ui.jqgrid.css" />
+        <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery/jquery-ui.custom.min.js"></script>
+        <script type="text/javascript" src="js/jquery/grid.locale-en.js"></script>
+        <script type="text/javascript">
+			jQuery.jgrid.no_legacy_api = true;
+			jQuery.jgrid.useJSON = true;
+		</script>
+        
+        <script type="text/javascript" src="js/jquery/jquery.jqGrid.min.js"></script>
+        <!--script type="text/javascript">
+            function search() {
+                var input = document.getElementsByName("name").value='';
+            }
+        </script-->
+    </head>
+    <body>
+        <form id="item" action="" method="post" >
+            <table bgcolor="#000000" border="0" cellpadding="3" cellspacing="1" align="center">
+                <tr bgcolor="#d0dcff">
+                    <td colspan="2">
+                        <strong>Item</strong>
+                    </td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Code</td>
+                    <td>
+                    	<input type="text" name="code" id="code" value="$!item.code" maxlength="20" tabindex="1"/>
+					</td>
+
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Name</td>
+                    <td>
+                    	<input type="text" name="name" id="name" value="$!item.name" tabindex="2" maxlength="20"/>
+					</td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Price</td>
+                    <td>
+                    	<input type="text" name="price" value="$!item.price" id="price" tabindex="3" maxlength="20"/>
+					</td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td>Description</td>
+                    <td><textarea name="description" id="description" tabindex="5" class="text" maxlength="100">$!item.description</textarea></td>
+                </tr>
+                <tr bgcolor="#ffffff">
+                    <td colspan="2">
+                        <input type="submit" value="Submit" tabindex="20"/>
+                        <input type="reset" tabindex="21"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <br/><br/>
+        <form id="search" action="#surl("value=/item/search/result")" method="get">
+        <table bgcolor="#000000" border="0" cellpadding="3" cellspacing="1" align="center">
+            <tr bgcolor="#d0dcff">
+                <td colspan="2">
+                    <strong>Item Search</strong>
+                </td>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <td>Name</td>
+                <td><input type="text" name="name" /></td>
+            </tr>
+            <tr bgcolor="#ffffff">
+                <td colspan="2">
+                        <input type="submit" value="Search" tabindex="20"/>
+                </td>
+            </tr>
+        </table>
+        </form>
+        
+##        <table id="grid"></table>
+##        <script type="text/javascript">
+##        	//jQuery(function(){
+##        		jQuery('#grid').jqGrid({
+	##        			url:'#surl("value=/item.jackson")',
+	##        			datatype: "json",
+	##    		   	colNames:['Code', 'Name', 'Price', 'Description'],
+	##    		   	colModel:[
+##    		   		{name:'code', index:'code', width:55},
+##        		   		{name:'name', index:'name', width:150},
+##        		   		{name:'price', index:'price', width:150},
+##        		   		{name:'description', index:'description', width:200, align:"right"},	
+##        		   	],
+##        		   	rowNum:10,
+##        		   	rowList:[10,20,30],
+##        		    //viewrecords: true,
+##        		    caption:"Item List"
+	##        		});
+##        	//});
+        </script>
+    </body>
+</html>
